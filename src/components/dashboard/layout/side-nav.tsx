@@ -1,8 +1,5 @@
 'use client';
 
-import * as React from 'react';
-import RouterLink from 'next/link';
-import { usePathname } from 'next/navigation';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
@@ -10,11 +7,13 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { ArrowSquareUpRight as ArrowSquareUpRightIcon } from '@phosphor-icons/react/dist/ssr/ArrowSquareUpRight';
 import { CaretUpDown as CaretUpDownIcon } from '@phosphor-icons/react/dist/ssr/CaretUpDown';
+import RouterLink from 'next/link';
+import { usePathname } from 'next/navigation';
+import * as React from 'react';
 
-import type { NavItemConfig } from '@/types/nav';
-import { paths } from '@/paths';
 import { isNavItemActive } from '@/lib/is-nav-item-active';
-import { Logo } from '@/components/core/logo';
+import { paths } from '@/paths';
+import type { NavItemConfig } from '@/types/nav';
 
 import { navItems } from './config';
 import { navIcons } from './nav-icons';
@@ -51,8 +50,12 @@ export function SideNav(): React.JSX.Element {
       }}
     >
       <Stack spacing={2} sx={{ p: 3 }}>
-        <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-flex' }}>
-          <Logo color="light" height={32} width={122} />
+        <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-flex', textDecoration: 'none' }}>
+          {/* <Logo color="light" height={32} width={122} /> */}
+          <Typography sx={{ textDecoration: 'none' }} variant="h6" color="#fff">
+            <span style={{ fontWeight: 'bolder' }}>Scale</span>{' '}
+            <span style={{ fontSize: '12px', opacity: 0.7 }}>by Renda</span>
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -70,7 +73,7 @@ export function SideNav(): React.JSX.Element {
               Workspace
             </Typography>
             <Typography color="inherit" variant="subtitle1">
-              Devias
+              Renda
             </Typography>
           </Box>
           <CaretUpDownIcon />
@@ -84,10 +87,10 @@ export function SideNav(): React.JSX.Element {
       <Stack spacing={2} sx={{ p: '12px' }}>
         <div>
           <Typography color="var(--mui-palette-neutral-100)" variant="subtitle2">
-            Need more features?
+            for feedback?
           </Typography>
           <Typography color="var(--mui-palette-neutral-400)" variant="body2">
-            Check out our Pro solution template.
+            some text about stuff.
           </Typography>
         </div>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -102,12 +105,12 @@ export function SideNav(): React.JSX.Element {
           component="a"
           endIcon={<ArrowSquareUpRightIcon fontSize="var(--icon-fontSize-md)" />}
           fullWidth
-          href="https://material-kit-pro-react.devias.io/"
+          // href="https://material-kit-pro-react.devias.io/"
           sx={{ mt: 2 }}
           target="_blank"
           variant="contained"
         >
-          Pro version
+          Renda Support
         </Button>
       </Stack>
     </Box>
