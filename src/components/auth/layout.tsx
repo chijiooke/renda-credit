@@ -1,11 +1,10 @@
-import * as React from 'react';
-import RouterLink from 'next/link';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import RouterLink from 'next/link';
+import * as React from 'react';
 
 import { paths } from '@/paths';
-import { DynamicLogo } from '@/components/core/logo';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -24,7 +23,12 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
       <Box sx={{ display: 'flex', flex: '1 1 auto', flexDirection: 'column' }}>
         <Box sx={{ p: 3 }}>
           <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-block', fontSize: 0 }}>
-            <DynamicLogo colorDark="light" colorLight="dark" height={32} width={122} />
+            {/* <DynamicLogo colorDark="light" colorLight="dark" height={32} width={122} />
+             */}
+            <Typography sx={{ textDecoration: 'none' }} variant="h5" color="#000">
+              <span style={{ fontWeight: 'bolder' }}>Scale</span>{' '}
+              <span style={{ fontSize: '12px', opacity: 0.7 }}>by Renda</span>
+            </Typography>
           </Box>
         </Box>
         <Box sx={{ alignItems: 'center', display: 'flex', flex: '1 1 auto', justifyContent: 'center', p: 3 }}>
@@ -46,11 +50,11 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
             <Typography color="inherit" sx={{ fontSize: '24px', lineHeight: '32px', textAlign: 'center' }} variant="h1">
               Welcome to{' '}
               <Box component="span" sx={{ color: '#15b79e' }}>
-                Devias Kit
+                Renda Credit
               </Box>
             </Typography>
             <Typography align="center" variant="subtitle1">
-              A professional template that comes with ready-to-use MUI components.
+              Some text about renda credit
             </Typography>
           </Stack>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
